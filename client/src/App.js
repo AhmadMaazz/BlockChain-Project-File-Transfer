@@ -1,9 +1,6 @@
 import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import { BrowserProvider } from 'ethers';
-import { JsonRpcProvider } from 'ethers';
-import { providers } from 'ethers';
 
 
 import FileUpload from "./components/FileUpload";
@@ -33,7 +30,7 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        let contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
+        let contractAddress = "your contract address";
 
         const contract = new ethers.Contract(
           contractAddress,
@@ -61,7 +58,7 @@ function App() {
       )}
 
       <div className="App">
-        <h1 style={{ color: "white" }}>Gdrive 3.0</h1>
+        <h1 style={{ color: "white" }}>Decentralized Drive</h1>
         <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>

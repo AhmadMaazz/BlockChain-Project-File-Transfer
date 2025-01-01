@@ -1,25 +1,22 @@
-// const hre = require("hardhat");
+const hre = require("hardhat");
 
-// async function main() {
-//   const Upload = await hre.ethers.getContractFactory("Upload");
-//   const upload = await Upload.deploy();
+async function main() {
+  const Upload = await hre.ethers.getContractFactory("Upload");
+  const upload = await Upload.deploy();
 
-//   await upload.deployed();
+  await upload.deployed();
 
-//   console.log("Library deployed to:", upload.address);
-// }
+  console.log("Library deployed to:", upload.address);
+}
 
-// main().catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
-
-
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
 // const hre = require("hardhat");
 
 // async function main() {
-  
 //   const upload = await hre.ethers.deployContract("Upload");
 //   await upload.waitForDeployment();
 
@@ -31,21 +28,22 @@
 //   process.exitCode = 1;
 // });
 
-const { ethers } = require("hardhat");
+// const hre = require("hardhat");
 
-async function main() {
-  const [deployer] = await ethers.getSigners();
-  console.log("Deploying contracts with the account:", deployer.address);
+// async function main() {
+//   // Get contract factory
+//   const Upload = await hre.ethers.getContractFactory("Upload");
 
-  const Token = await ethers.getContractFactory("Token");
-  const token = await Token.deploy();
+//   // Deploy contract
+//   const upload = await Upload.deploy();
 
-  console.log("Token address:", token.address);
-}
+//   // Wait for deployment to complete
+//   await upload.deployed();
 
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+//   console.log("Contract deployed to:", upload.address);
+// }
+
+// main().catch((error) => {
+//   console.error(error);
+//   process.exitCode = 1;
+// });
